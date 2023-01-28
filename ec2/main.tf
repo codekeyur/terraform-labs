@@ -66,7 +66,7 @@ resource "aws_security_group" "ec2-sg" {
 
 resource "aws_instance" "bastion-host" {
   ami             = "ami-0aa7d40eeae50c9a9"
-  instance_type   = "t2.micro"
+  instance_type   = "t3.micro"
   security_groups = [aws_security_group.ec2-sg.name]
   key_name        = aws_key_pair.key-pair.key_name
   tags = {
